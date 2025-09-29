@@ -2,17 +2,13 @@
 import os
 import glob
 
-# -----------------------
-# SETTINGS
-# -----------------------
+
 runs_dir = "RUNS3"        # top folder with your run directories
 log_name = "log.txt"      # change if needed
 keywords = ["termination code"]  # search terms
 expected_end = "termination code"  # string that indicates a clean finish
 
-# -----------------------
 # SCAN RUNS
-# -----------------------
 unique_msgs = set()
 timeout_runs = []
 
@@ -38,9 +34,7 @@ for run_path in glob.glob(os.path.join(runs_dir, "*")):
     if not found_msg:
         timeout_runs.append(run_path)
 
-# -----------------------
 # OUTPUT
-# -----------------------
 print(f"Found {len(unique_msgs)} unique termination/failure messages:\n")
 for msg in sorted(unique_msgs):
     print(" -", msg)

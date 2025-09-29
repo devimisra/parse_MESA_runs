@@ -3,16 +3,12 @@ import os
 import glob
 import shutil
 
-# -----------------------
 # SETTINGS
-# -----------------------
 runs_dir = "RUNS3"        # top folder with your run directories
 log_name = "log.txt"      # log file inside each run dir
 expected_end = "termination code"  # marker for a clean run
 
-# -----------------------
 # FIX FUNCTIONS
-# -----------------------
 def apply_fix(inlist_file, fix_type):
     """Edit inlist_project or inlist1 to apply the chosen fix."""
     with open(inlist_file, "r") as f:
@@ -25,9 +21,7 @@ def apply_fix(inlist_file, fix_type):
             else:
                 f.write(line)
 
-# -----------------------
 # MAIN SCAN + FIX
-# -----------------------
 timeout_runs = []
 
 for run_path in glob.glob(os.path.join(runs_dir, "*")):
@@ -57,9 +51,7 @@ for run_path in glob.glob(os.path.join(runs_dir, "*")):
 
         timeout_runs.append(run_name)
 
-# -----------------------
 # WRITE SUMMARY
-# -----------------------
 with open("timeout_runs.txt", "w") as f:
     for run in timeout_runs:
         f.write(f"{run} rerun-prepared\n")
