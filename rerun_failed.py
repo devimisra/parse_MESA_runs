@@ -4,7 +4,7 @@ import glob
 import shutil
 
 # SETTINGS
-runs_dir = "RUNS3"        # top folder with your run directories
+runs_dir = # top folder with your run directories
 log_name = "log.txt"      # log file inside each run dir
 expected_end = "termination code"  # marker for a clean run
 
