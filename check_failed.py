@@ -3,7 +3,7 @@ import os
 import glob
 
 
-runs_dir = "RUNS3"        # top folder with your run directories
+runs_dir =  # top folder with your run directories
 log_name = "log.txt"      # change if needed
 keywords = ["termination code"]  # search terms
 expected_end = "termination code"  # string that indicates a clean finish
