@@ -1,5 +1,5 @@
 #!/bin/bash
-#SBATCH --account=share-nv-fys
+#SBATCH --account=share-nv-fys # CHANGE
 #SBATCH --partition=norma2
 #SBATCH -N 1
 #SBATCH --cpus-per-task=4
@@ -8,12 +8,12 @@
 #SBATCH --job-name="mesa_grid"
 #SBATCH --output=slurm-%A_%a.out
 #SBATCH --mail-type=END,FAIL
-#SBATCH --mail-user=devina.misra@ntnu.no
+#SBATCH --mail-user=YOUR_EMAIL # CHANGE
 #SBATCH --mem-per-cpu=4G
-#SBATCH --array=1-128
+#SBATCH --array=1-128 # CHANGE
 
-source $MESASDK_ROOT/../init-mesa
-echo "MESA+POSYDON Initialized"
+# Add MESASDK path
+# Add MESA path 
 
 # get the run directory for this job index
 RUN_DIR=$(awk -v id=$SLURM_ARRAY_TASK_ID '$1==id {print $2}' joblist.txt)
